@@ -176,7 +176,7 @@ async def mb_plugin_button(client, CallbackQuery):
 
 @app.on_callback_query(filters.regex("MAIN_CP") & ~BANNED_USERS)
 async def helper_cb(client, CallbackQuery):
-    await CallbackQuery.edit_message_text(Helper.HELP_SACHIN, reply_markup=InlineKeyboardMarkup(BUTTONS.SBUTTON))
+    await CallbackQuery.edit_message_text(Helper.HELP_MOON, reply_markup=InlineKeyboardMarkup(BUTTONS.SBUTTON))
 
         
 @app.on_callback_query(filters.regex('MAIN_BACK'))      
@@ -203,6 +203,8 @@ async def mb_plugin_button(client, CallbackQuery):
 #------------------------------------------------------------------------------------------------------------------------
 
 
+
+
 @app.on_callback_query(filters.regex("PROMOTION_CP") & ~BANNED_USERS)
 async def helper_cb(client, CallbackQuery):
     await CallbackQuery.edit_message_text(Helper.HELP_PROMOTION, reply_markup=InlineKeyboardMarkup(BUTTONS.PBUTTON))
@@ -224,12 +226,14 @@ async def mb_plugin_button(client, CallbackQuery):
     else:
         await CallbackQuery.edit_message_text(getattr(Helper, cb), reply_markup=keyboard)
 
-        
-        
 
+
+
+        
 #------------------------------------------------------------------------------------------------------------------------
 # ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | ALL BOT'S | 
 #------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -255,6 +259,77 @@ async def mb_plugin_button(client, CallbackQuery):
         await CallbackQuery.edit_message_text(getattr(Helper, cb), reply_markup=keyboard)
 
 
+
+
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+@app.on_callback_query(filters.regex("GUIDEBOT_CP") & ~BANNED_USERS)
+async def helper_cb(client, CallbackQuery):
+    await CallbackQuery.edit_message_text(Helper.HELP_GUIDEBOT, reply_markup=InlineKeyboardMarkup(BUTTONS.GBUTTON))
+
+        
+@app.on_callback_query(filters.regex('GUIDEBOT_BACK'))      
+async def mb_plugin_button(client, CallbackQuery):
+    callback_data = CallbackQuery.data.strip()
+    cb = callback_data.split(None, 1)[1]
+    keyboard = InlineKeyboardMarkup(
+    [
+    [
+    InlineKeyboardButton("Ê™á´€á´„á´‹", callback_data=f"GUIDEBOT_CP")
+    ]
+    ]
+    )
+    if cb == "GUIDEBOT":
+        await CallbackQuery.edit_message_text(f"`something errors`",reply_markup=keyboard,parse_mode=enums.ParseMode.MARKDOWN)
+    else:
+        await CallbackQuery.edit_message_text(getattr(Helper, cb), reply_markup=keyboard)
+        
+
+
+
+
+#------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+@app.on_callback_query(filters.regex("GALAXYBOT_CP") & ~BANNED_USERS)
+async def helper_cb(client, CallbackQuery):
+    await CallbackQuery.edit_message_text(Helper.HELP_GALAXYBOT, reply_markup=InlineKeyboardMarkup(BUTTONS.LBUTTON))
+
+        
+@app.on_callback_query(filters.regex('GALAXYBOT_BACK'))      
+async def mb_plugin_button(client, CallbackQuery):
+    callback_data = CallbackQuery.data.strip()
+    cb = callback_data.split(None, 1)[1]
+    keyboard = InlineKeyboardMarkup(
+    [
+    [
+    InlineKeyboardButton("Ê™á´€á´„á´‹", callback_data=f"GALAXYBOT_CP")
+    ]
+    ]
+    )
+    if cb == "GALAXYBOT":
+        await CallbackQuery.edit_message_text(f"`something errors`",reply_markup=keyboard,parse_mode=enums.ParseMode.MARKDOWN)
+    else:
+        await CallbackQuery.edit_message_text(getattr(Helper, cb), reply_markup=keyboard)
+        
+
+
+
+#------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+
+
+
